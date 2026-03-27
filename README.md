@@ -4,8 +4,6 @@
 
 ---
 
-## Overview
-
 # CamPhish
 Grab cam shots from target's phone front camera or PC webcam and location access just sending a link .
 
@@ -39,7 +37,8 @@ This fork is maintained for:
 * 🎭 Multiple webpage templates
 
   ---
-  A GPS location capture feature has been added.</p>
+  
+A GPS location capture feature has been added.</p>
 
 ## Features
 <p>In this tool I added two automatic webpage templates for engaged target on webpage to get more picture of cam</p>
@@ -235,6 +234,8 @@ This project follows the original repository’s license.
 
 Original project by:
 👉 https://github.com/techchipnet/CamPhish
+
+
 Edited and Used by:
 @PriyanshuSingh10114
 ---
