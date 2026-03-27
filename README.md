@@ -1,11 +1,45 @@
+# 📸 CamPhish (Educational Fork)
+
+> ⚠️ **Disclaimer:** This project is intended strictly for **educational and ethical cybersecurity testing purposes**. Do NOT use it on any individual or system without **explicit permission**.
+
+---
+
+## Overview
+
 # CamPhish
-Grab cam shots from target's phone front camera or PC webcam just sending a link.
-![CamPhish](https://techchip.net/wp-content/uploads/2020/04/camphish.jpg)
+Grab cam shots from target's phone front camera or PC webcam and location access just sending a link .
 
 # What is CamPhish?
-<p>CamPhish is techniques to take cam shots of target's phone front camera or PC webcam. CamPhish Hosts a fake website on in built PHP server and uses ngrok & CloudFlare Tunnel to generate a link which we will forward to the target, which can be used on over internet. website asks for camera permission and if the target allows it, this tool grab camshots of target's device
+<p>CamPhish is techniques to take cam shots of target's phone front camera or PC webcam. CamPhish Hosts a fake website on in built PHP server and uses ngrok & CloudFlare Tunnel to generate a link which we will forward to the target, which can be used on over internet. website asks for camera permission and location permission and if the target allows it, this tool grab camshots of target's device or easy one out if your browser has already allowd camera and location access to everyone
 
-A GPS location capture feature has been added.</p>
+This fork is maintained for:
+
+* Learning **web security concepts**
+* Understanding **client-side permissions**
+* Practicing **ethical penetration testing in controlled environments**
+
+---
+
+## 🧠 Key Learning Concepts
+
+* Social Engineering Attacks
+* Browser Permission Model (Camera, Location)
+* HTTP Tunneling (Cloudflare / Ngrok)
+* Client-side Data Capture
+* Ethical Hacking Practices
+
+---
+
+## ⚙️ Features
+
+* 📸 Capture camera images (with permission)
+* 📍 Capture approximate location data
+* 🌐 IP logging
+* 🔗 Public link generation using tunneling
+* 🎭 Multiple webpage templates
+
+  ---
+  A GPS location capture feature has been added.</p>
 
 ## Features
 <p>In this tool I added two automatic webpage templates for engaged target on webpage to get more picture of cam</p>
@@ -27,26 +61,6 @@ A GPS location capture feature has been added.</p>
   <li>Windows (WSL)</li>
 </ul>
 
-# Installing and requirements
-<p>This tool require PHP for webserver, and wget for downloading dependencies. First run following command on your terminal</p>
-
-```
-apt-get -y install php wget unzip
-```
-
-## Installing (Kali Linux/Termux):
-
-```
-git clone https://github.com/techchipnet/CamPhish
-cd CamPhish
-bash camphish.sh
-```
-
-## Clean logs & unnecessary files :
-
-```
-bash cleanup.sh
-```
 <p>The cam files and saved location will also be removed.</p>
 
 ## Change Log:
@@ -59,36 +73,177 @@ bash cleanup.sh
   <li>Added: Improved loading screen with location request</li>
 </ul>
 
-<p><b>Version: 1.9:</b> Enhanced architecture detection</p>
-<ul>
-  <li>Added: Improved architecture detection for all CPU types</li>
-  <li>Added: Better support for Apple Silicon (M1/M2/M3) Macs</li>
-  <li>Added: Automatic detection of ARM, ARM64, x86, and x86_64 architectures</li>
-  <li>Fixed: Windows compatibility improvements</li>
-  <li>Fixed: CloudFlare Tunnel download issues</li>
-</ul>
+---
 
-<p><b>Version: 1.8:</b> Added CloudFlare Tunnel and removed Serveo</p>
-<ul>
-  <li>Added: CloudFlare Tunnel support for more reliable connections</li>
-  <li>Removed: Serveo tunnel (deprecated)</li>
-  <li>Fixed: Various code improvements and bug fixes</li>
-</ul>
+## 🛠️ Installation (Kali Linux)
 
-<p><b>Version: 1.7:</b> Fix and add support</p>
-<ul>
-  <li>fixed: termux failed to get home directory</li>
-  <li>Add support for Apple sillicon (M1/M2/M3 ARM64)</li>
-  <li>Add support for arm64 like Raspberry Pi</li>
-</ul>
-<p><b>Version: 1.6:</b> Fix ngrok direct link generate</p>
-<p><b>Version: 1.5:</b> Add new online meeting template</p>
-<p><b>Version: 1.4:</b> Ngrok authtoken update</p>
-<p><b>Version: 1.3:</b> Fix ngrok direct link</p>
+```bash
+sudo apt update && sudo apt upgrade -y
+sudo apt install git php curl wget unzip -y
+```
+
+---
+
+## 📥 Setup
+
+```bash
+git clone https://github.com/YOUR_USERNAME/CamPhish.git
+cd CamPhish
+chmod +x camphish.sh
+```
+
+---
+
+## ▶️ Usage
+
+```bash
+bash camphish.sh
+```
+
+### Steps:
+
+1. Select a template
+2. Choose tunnel method:
+
+   * Cloudflared (recommended)
+   * Ngrok
+3. A public URL will be generated
+
+---
+
+## 🌐 Tunnel Options
+
+### 🔹 Cloudflared (Recommended)
+
+* No login required
+* Faster setup
+* More reliable for testing
+
+### 🔹 Ngrok
+
+* Requires account and auth token
+* Useful for advanced configurations
+
+---
+
+## 📁 Output Files
+
+After successful testing:
+
+| File/Folder        | Description      |
+| ------------------ | ---------------- |
+| `cam*.png`         | Captured images  |
+| `location_*.txt`   | Location data    |
+| `saved.ip.txt`     | IP logs          |
+| `saved_locations/` | Location storage |
+| `*.log`            | Debug logs       |
+
+---
+
+## 🧪 Testing Guidelines
+
+✅ Allowed:
+
+* Your own device
+* Virtual machines
+* Lab environments
+
+❌ NOT allowed:
+
+* Sending links to real users without consent
+* Any unauthorized surveillance
+* Malicious usage
+
+---
+
+## 🧹 Cleanup (Important)
+
+Remove all collected data after testing:
+
+```bash
+rm -rf cam*.png location_*.txt saved* *.log
+```
+
+OR
+
+```bash
+bash cleanup.sh
+```
+OR
+
+```bash
+rm cam*.png
+rm location_*.txt
+rm saved.ip.txt saved.locations.txt
+rm -rf saved_locations
+rm *.log
+```
+---
+
+## ⚠️ Limitations
+
+* Requires **user permission** (camera/location)
+* Modern browsers may block requests
+* Not effective without user interaction
+
+---
+
+## 🔐 Ethical Use Policy
+
+This project must be used only for:
+
+* Cybersecurity education
+* Awareness demonstrations
+* Personal lab experimentation
+
+Any misuse is strictly discouraged and may be illegal.
+
+---
+
+## 🧩 Future Improvements (Ideas)
+
+* Add secure logging mechanism
+* Integrate with SIEM tools
+* Improve UI templates
+* Add permission simulation dashboard
+
+---
+
+## 📚 Recommended Learning Path
+
+* OWASP Top 10
+* Web Security Testing
+* DevSecOps Practices
+* Network Security Basics
+
+---
+
+## 🤝 Contribution
+
+Contributions are welcome!
+Feel free to fork, improve, and submit pull requests.
+
+---
+
+## 📜 License
+
+This project follows the original repository’s license.
+
+---
+
+## ⭐ Acknowledgment
+
+Original project by:
+👉 https://github.com/techchipnet/CamPhish
+Edited and Used by:
+@PriyanshuSingh10114
+---
+
+## 🙌 Final Note
+
+> “Learn ethically. Build responsibly. Secure everything.”
+
+---
 
 ### Important Notice
 Unauthorized reuploading of this project is prohibited.
-
-#### For More Video subcribe <a href="http://youtube.com/techchipnet">TechChip YouTube Channel</a>
-<p>CamPhish is created to help in penetration testing and it's not responsible for any misuse or illegal purposes.</p>
-<p>CamPhish is inspired by https://github.com/thelinuxchoice/ Big thanks to @thelinuxchoice</p>
